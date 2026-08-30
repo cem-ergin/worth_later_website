@@ -1,0 +1,585 @@
+/* The tokens are lib/app/theme/app_colors.dart, name for name. Both
+   appearances are designed rather than derived: dark is not an inversion,
+   it keeps the same roles. Green stays scarce — it marks the kept money and
+   nothing else. */
+:root {
+  --canvas: #ffffff;
+  --paper: #ffffff;
+  --surface: #f3f6f4;
+  --line: #e7edea;
+  --line-strong: #e1e8e4;
+  --ink: #0c1210;
+  --ink2: #46524e;
+  --muted: #8b9793;
+  --faint: #a8b2ae;
+  --seed: #2e7d64;
+  --seed-ink: #2e7d64;
+  --on-seed: #ffffff;
+  --mint-tint: #dff3ec;
+  --on-mint-tint: #1b6b54;
+  --growth: #1b9c6b;
+  --spend: #cb5a48;
+  --lift: rgba(12, 18, 16, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0b1210;
+    --paper: #131a17;
+    --surface: #1e2724;
+    --line: #29332f;
+    --line-strong: #35403b;
+    --ink: #ecf1ef;
+    --ink2: #b9c5c0;
+    --muted: #8b9793;
+    --faint: #6e7a76;
+    --seed: #26755e;
+    --seed-ink: #5fd3a6;
+    --on-seed: #f2faf7;
+    --mint-tint: #16332a;
+    --on-mint-tint: #7fe0b8;
+    --growth: #5fd3a6;
+    --spend: #ee8a78;
+    --lift: rgba(0, 0, 0, 0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+}
+
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px 6vw;
+  background: color-mix(in srgb, var(--canvas) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.mark {
+  color: var(--seed-ink);
+  flex: none;
+}
+
+.brand-word {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand-link:hover .brand-word {
+  color: var(--seed-ink);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+/* ---------- shared type ---------- */
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 88px 6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.section p {
+  margin: 0;
+  color: var(--ink2);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 660px;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding: clamp(64px, 12vh, 130px) 6vw clamp(56px, 9vh, 96px);
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 940px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-start;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 6.4vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  max-width: 14ch;
+}
+
+.hero-lede {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--ink2);
+  max-width: 640px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-aside {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- the trade card: the verdict screen, on a page ---------- */
+
+.trade {
+  width: 100%;
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px var(--lift);
+}
+
+.trade-half {
+  background: var(--paper);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trade-half.keep {
+  background: var(--mint-tint);
+}
+
+.trade-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.trade-half.keep .trade-label {
+  color: var(--on-mint-tint);
+}
+
+.trade-figure {
+  font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.trade-half.keep .trade-figure {
+  color: var(--on-mint-tint);
+}
+
+.trade-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.trade-premise {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  padding: 16px 24px;
+  font-size: 0.9rem;
+  color: var(--ink2);
+  line-height: 1.55;
+}
+
+/* ---------- steps ---------- */
+
+.steps {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.steps li {
+  background: var(--paper);
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.step-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--seed-ink);
+  letter-spacing: 0.04em;
+}
+
+.step-body strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.step-body span {
+  color: var(--ink2);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ---------- feature grid ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.feature {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+
+.feature-tag {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-mint-tint);
+  background: var(--mint-tint);
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.section-alt {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.section-alt .feature {
+  background: var(--canvas);
+}
+
+/* ---------- price columns (what is free, what is paid) ---------- */
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.tier {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 22px;
+  background: var(--paper);
+}
+
+.tier h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.tier ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--ink2);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.tier-price {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ---------- disclaimer: quiet, never hidden ---------- */
+
+.disclaimer {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 6vw 72px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------- calls to action ---------- */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  padding: 15px 26px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* The download button is the app's primary action, not its reward action:
+   green is what the app spends on walking away from a purchase. */
+.cta-primary {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.cta-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.cta-pending {
+  background: var(--surface);
+  color: var(--muted);
+  border-color: var(--line-strong);
+  cursor: default;
+}
+
+.closing {
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.closing p {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.closing .hero-actions {
+  justify-content: center;
+}
+
+/* ---------- inner pages ---------- */
+
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 64px 6vw 88px;
+  width: 100%;
+}
+
+.policy {
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+  text-align: left;
+}
+
+.policy h1 {
+  margin: 0 0 4px;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.policy h2 {
+  margin: 26px 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.policy h3 {
+  margin: 18px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.policy p {
+  margin: 0;
+  color: var(--ink2);
+  line-height: 1.65;
+}
+
+.policy a {
+  color: var(--seed-ink);
+}
+
+.policy-meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.policy-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink2);
+  line-height: 1.7;
+}
+
+.policy-callout {
+  border: 1px solid var(--line);
+  background: var(--mint-tint);
+  color: var(--on-mint-tint);
+  border-radius: 14px;
+  padding: 16px 18px;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.faq {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  padding: 28px 6vw 36px;
+  border-top: 1px solid var(--line);
+  background: var(--canvas);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.footer-links a:hover {
+  color: var(--seed-ink);
+}
+
+.footer-note {
+  margin: 0;
+  max-width: 620px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--faint);
+}
+
+@media (max-width: 720px) {
+  .trade {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 64px 6vw;
+  }
+}
