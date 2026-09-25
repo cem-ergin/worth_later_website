@@ -19,9 +19,10 @@ function PrivacyPolicy() {
           of it is stored on your device.
         </p>
         <p>
-          We use two third-party services: Firebase Analytics, to understand how
-          the app is used, and RevenueCat, to manage subscriptions and in-app
-          purchases. Neither of them receives the amounts you enter.
+          We use three third-party services: Firebase Analytics and PostHog, to
+          understand how the app is used, and RevenueCat, to manage
+          subscriptions and in-app purchases. None of them receives the amounts
+          you enter.
         </p>
         <p>
           This Privacy Policy explains what information may be collected, how it
@@ -71,9 +72,11 @@ function PrivacyPolicy() {
         <h3>c) Analytics Data</h3>
         <p>
           WorthLater uses Firebase Analytics, a service provided by Google LLC,
-          to help us understand how the app is used and improve it.
+          and PostHog, a service provided by PostHog, Inc. and hosted in the
+          European Union, to help us understand how the app is used and improve
+          it. Both receive the same events.
         </p>
-        <p>Firebase Analytics may collect information such as:</p>
+        <p>These services may collect information such as:</p>
         <ul className="policy-list">
           <li>App interactions and usage events</li>
           <li>Features used within the app</li>
@@ -82,6 +85,11 @@ function PrivacyPolicy() {
           <li>Operating system and version</li>
           <li>Language and general region</li>
           <li>App instance identifiers</li>
+          <li>
+            The app-specific identifier RevenueCat assigns to your installation
+            (see below), used so that analytics and subscription records refer
+            to the same installation
+          </li>
           <li>General technical and diagnostic information</li>
         </ul>
         <p>
@@ -98,7 +106,7 @@ function PrivacyPolicy() {
           features, identify technical issues, and improve WorthLater.
         </p>
         <p>
-          We do not use Firebase Analytics to access the content of your
+          We do not use analytics to access the content of your
           messages, photos, contacts, personal files, or other applications, and
           we do not use analytics data for personalized advertising.
         </p>
@@ -183,6 +191,14 @@ function PrivacyPolicy() {
           analytics, device, identifier, and technical information on our
           behalf.
         </p>
+        <h3>PostHog</h3>
+        <p>
+          PostHog, provided by PostHog, Inc., is used alongside Firebase
+          Analytics to understand general app usage and improve WorthLater. Data
+          is hosted in the European Union. PostHog may process the same limited
+          analytics, device, identifier, and technical information on our
+          behalf.
+        </p>
         <h3>RevenueCat</h3>
         <p>
           RevenueCat, provided by RevenueCat, Inc., is used to manage
@@ -204,7 +220,7 @@ function PrivacyPolicy() {
         </p>
         <p>
           Information may be processed by service providers such as Google
-          Firebase and RevenueCat as necessary to provide analytics and
+          Firebase, PostHog and RevenueCat as necessary to provide analytics and
           subscription functionality.
         </p>
         <p>
@@ -220,9 +236,9 @@ function PrivacyPolicy() {
           you clear it in the app, reset it, or delete the app.
         </p>
         <p>
-          Analytics information collected through Firebase Analytics may be
-          retained according to our Firebase configuration and Google&rsquo;s
-          applicable data retention practices.
+          Analytics information collected through Firebase Analytics and
+          PostHog may be retained according to our configuration of each
+          service and their applicable data retention practices.
         </p>
         <p>
           Subscription and purchase information processed through RevenueCat may
@@ -233,8 +249,8 @@ function PrivacyPolicy() {
         <p>
           Deleting WorthLater from your device removes the information stored
           locally, but it does not necessarily immediately delete information
-          previously transmitted to Firebase Analytics, RevenueCat, or your app
-          store.
+          previously transmitted to Firebase Analytics, PostHog, RevenueCat, or
+          your app store.
         </p>
 
         <h2>7. Your Choices</h2>
