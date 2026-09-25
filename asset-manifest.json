@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/worth_later_website/static/css/main.6e9c2d8d.css",
-    "main.js": "/worth_later_website/static/js/main.287802ab.js",
+    "main.js": "/worth_later_website/static/js/main.006c4073.js",
     "static/js/453.d51fd726.chunk.js": "/worth_later_website/static/js/453.d51fd726.chunk.js",
     "index.html": "/worth_later_website/index.html",
     "main.6e9c2d8d.css.map": "/worth_later_website/static/css/main.6e9c2d8d.css.map",
-    "main.287802ab.js.map": "/worth_later_website/static/js/main.287802ab.js.map",
+    "main.006c4073.js.map": "/worth_later_website/static/js/main.006c4073.js.map",
     "453.d51fd726.chunk.js.map": "/worth_later_website/static/js/453.d51fd726.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6e9c2d8d.css",
-    "static/js/main.287802ab.js"
+    "static/js/main.006c4073.js"
   ]
 }
