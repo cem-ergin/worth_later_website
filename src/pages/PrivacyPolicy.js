@@ -259,10 +259,10 @@ function PrivacyPolicy() {
           any time.
         </p>
         <p>
-          The app does not currently offer an in-app analytics opt-out. You can
-          stop further analytics collection by uninstalling WorthLater, and, on
-          most devices, by using your operating system&rsquo;s own advertising and
-          usage-data controls.
+          You can turn off usage analytics at any time in the app under
+          Settings &rarr; Privacy &rarr; Usage analytics. Turning it off stops
+          both Firebase Analytics and PostHog from collecting anything more and
+          clears their identifiers on your device.
         </p>
         <p>
           You may manage or cancel your subscription through your app store
