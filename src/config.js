@@ -19,4 +19,4 @@ export const SUPPORT_EMAIL = 'cem-ergin@outlook.com';
 export const TERMS_URL =
   'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
 
-export const PRIVACY_EFFECTIVE_DATE = 'August 30, 2026';
+export const PRIVACY_EFFECTIVE_DATE = 'September 25, 2026';
